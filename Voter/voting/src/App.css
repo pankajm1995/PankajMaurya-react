@@ -1,0 +1,25 @@
+.App
+{
+  margin: auto;
+  border: 2px solid black;
+  height: 250px;
+  width: 400px;
+  margin-top: 10%;
+}
+.container button
+{
+ height: 150px;
+ width: 100px;
+position: relative;
+}
+.container button:hover
+{
+  background-color: aqua;
+  transition: background-color 2s;
+}
+.count
+{
+  display: flex;
+ position:absolute ;
+  column-gap: 100px;
+}
