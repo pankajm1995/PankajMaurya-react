@@ -6,21 +6,29 @@ function App() {
   const [rosevote, setrosevote] = useState(0)
   const [sunvote, setsunvote] = useState(0)
   const [hibiscusvote, sethibiscusvote] = useState(0)
-  useEffect(() => {
-    if (rosevote !== 0 || sunvote !== 0 || hibiscusvote !== 0)
-      setlotusvote(lotusvote + 1);
-    setrosevote(0)
-    setsunvote(0)
-    sethibiscusvote(0)
- 
-  }, [rosevote, sunvote, hibiscusvote])
+  // useEffect(() => {
+  //   if (rosevote !== 0 || sunvote !== 0 || hibiscusvote !== 0)
+  //     setlotusvote(lotusvote + 1);
+  //   setrosevote(0)
+  //   setsunvote(0)
+  //   sethibiscusvote(0)
+
+  // }, [rosevote, sunvote, hibiscusvote])
   function vote(flower) {
     switch (flower) {
       case "lotus":
         setlotusvote(lotusvote + 1)
         break;
       case "rose":
-        setrosevote(rosevote + 1)
+        if (rosevote>=5)
+        {
+          setrosevote(rosevote + 1)
+        setlotusvote(lotusvote + 1)
+        }
+        else{
+           setrosevote(rosevote+1)
+        }
+      
         break;
       case "sunflower":
         setsunvote(sunvote + 1)
